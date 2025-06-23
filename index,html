@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free QR Code Generator by Rohit Gunthal | COCSIT College Project</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Free QR Code Generator by Rohit Gunthal | COCSIT College Project">
+    <meta name="description" content="Create custom QR codes instantly with this free QR generator. A project by Rohit Gunthal from COCSIT College. Generate QR codes for URLs, download in multiple formats, and customize designs.">
+    <meta name="keywords" content="Rohit Gunthal, COCSIT College, QR code generator, free QR generator, COCSIT project, QR maker, college project, Rohit Gunthal project, COCSIT student project, QR code maker">
+    <meta name="author" content="Rohit Gunthal">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:title" content="Free QR Code Generator by Rohit Gunthal | COCSIT College Project">
+    <meta property="og:description" content="Create custom QR codes instantly with this free QR generator. A project by Rohit Gunthal from COCSIT College.">
+    <meta property="og:image" content="https://yourwebsite.com/path-to-preview-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com/">
+    <meta property="twitter:title" content="Free QR Code Generator by Rohit Gunthal | COCSIT College Project">
+    <meta property="twitter:description" content="Create custom QR codes instantly with this free QR generator. A project by Rohit Gunthal from COCSIT College.">
+    <meta property="twitter:image" content="https://yourwebsite.com/path-to-preview-image.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Free QR Code Generator by Rohit Gunthal",
+        "author": {
+            "@type": "Person",
+            "name": "Rohit Gunthal"
+        },
+        "description": "Create custom QR codes instantly with this free QR generator. A project by Rohit Gunthal from COCSIT College.",
+        "applicationCategory": "UtilityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "educationalUse": "Project",
+        "keywords": "QR code generator, Rohit Gunthal, COCSIT College, free QR generator",
+        "creator": {
+            "@type": "Organization",
+            "name": "COCSIT College"
+        }
+    }
+    </script>
+
+    <!-- Additional SEO Tags -->
+    <link rel="canonical" href="https://yourwebsite.com/">
+    <meta name="google-site-verification" content="your-verification-code">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Additional Meta Information -->
+    <meta name="category" content="Web Tool">
+    <meta name="classification" content="Free Tool">
+    <meta name="target" content="all">
+    <meta name="audience" content="all">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="7 days">
+    <meta name="subject" content="QR Code Generator">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --background: #f8fafc;
+            --text: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            color: #64748b;
+        }
+
+        .input-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        input[type="url"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input[type="url"]:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: var(--secondary);
+        }
+
+        .qr-section {
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .qr-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .download-options {
+            margin-top: 1rem;
+        }
+
+        .download-options button {
+            margin: 0 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: white;
+            color: #64748b;
+            margin-top: auto;
+        }
+
+        .error {
+            color: #dc2626;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>QR Code Generator</h1>
+            <p>Generate QR codes instantly for any URL</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input type="url" id="urlInput" placeholder="Enter URL here (e.g., https://example.com)">
+                <div class="error" id="errorMessage">Please enter a valid URL</div>
+            </div>
+           <center> <button class="button" onclick="generateQR()">Generate QR Code</button></center>
+        </div>
+
+        <div class="qr-section" id="qrSection">
+            <div class="qr-container">
+                <div id="qrcode"></div>
+            </div>
+            <div class="download-options">
+                <button class="button" onclick="downloadQR('png')">Download PNG</button>
+                <br>
+                <br>
+                <button class="button" onclick="downloadQR('svg')">Download SVG</button>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Instant Generation</h3>
+                <p>Generate QR codes in seconds</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-download"></i>
+                <h3>Multiple Formats</h3>
+                <p>Download as PNG or SVG</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Friendly</h3>
+                <p>Works on all devices</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Rohit Gunthal. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        let qrInstance = null;
+
+        function generateQR() {
+            const urlInput = document.getElementById('urlInput');
+            const qrSection = document.getElementById('qrSection');
+            const errorMessage = document.getElementById('errorMessage');
+            const url = urlInput.value.trim();
+
+            // URL validation
+            try {
+                new URL(url);
+                errorMessage.style.display = 'none';
+            } catch {
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Clear previous QR code
+            if (qrInstance) {
+                qrInstance.clear();
+            }
+
+            // Generate new QR code
+            qrInstance = new QRCode(document.getElementById("qrcode"), {
+                text: url,
+                width: 200,
+                height: 200,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+
+            qrSection.style.display = 'block';
+        }
+
+        function downloadQR(format) {
+            const qrCanvas = document.querySelector('#qrcode canvas');
+            if (!qrCanvas) return;
+
+            if (format === 'png') {
+                const link = document.createElement('a');
+                link.download = 'qrcode.png';
+                link.href = qrCanvas.toDataURL('image/png');
+                link.click();
+            } else if (format === 'svg') {
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                const image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+                
+                svg.setAttribute('width', '200');
+                svg.setAttribute('height', '200');
+                
+                image.setAttribute('width', '200');
+                image.setAttribute('height', '200');
+                image.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', qrCanvas.toDataURL('image/png'));
+                
+                svg.appendChild(image);
+                
+                const svgData = new XMLSerializer().serializeToString(svg);
+                const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+                const svgUrl = URL.createObjectURL(svgBlob);
+                
+                const link = document.createElement('a');
+                link.download = 'qrcode.svg';
+                link.href = svgUrl;
+                link.click();
+                
+                URL.revokeObjectURL(svgUrl);
+            }
+        }
+    </script>
+</body>
+</html>
